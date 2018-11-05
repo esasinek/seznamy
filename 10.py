@@ -25,17 +25,16 @@
 
 def nakresli_mapu(souradnice):
     mapa = []
-    radek = []
     for zn in range(10):
-        radek.append(". ")
-    for ra in range(10):
-        mapa.append(list(radek))
-    souradnice = list(souradnice)
+        radek = []
+        for ra in range(10):
+            radek.append(". ")
+        mapa.append(radek)
     for x, y in souradnice:
-        mapa[y][x] = "X"
+        mapa[y][x] = "X "
     for radek in mapa:
-        print(radek)
+        print("".join(radek))
     return mapa
 
 
-print(nakresli_mapu([(0, 0), (1, 0), (2, 2), (4, 3), (8, 9), (8, 9)]))
+nakresli_mapu([(0, 0), (1, 0), (2, 2), (4, 3), (8, 9), (8, 9)])
